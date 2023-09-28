@@ -13,10 +13,6 @@ permissions:
 jobs:
     prep:
         runs-on: ubuntu-latest
-        env:
-            TF_VAR_az_subscription_id: ${{ secrets.SUBSCRIPTION_ID }}
-            TF_VAR_az_tenant_id: ${{ secrets.TENANT_ID }}
-            TF_VAR_az_client_id: ${{ secrets.CLIENT_ID }}
         steps:
             - name: Checkout Repo
               uses: actions/checkout@v2
