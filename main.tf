@@ -9,13 +9,19 @@ terraform {
 
   required_version = ">= 1.1.0"
 
-  # backend "azurerm" {
-  #   resource_group_name  = "carson-terraform-dob"
-  #   storage_account_name = "carsonterraformstorage"
-  #   container_name       = "carson-dob"
-  #   key                  = "prod.terraform.carson-dob"
-  # }
+  backend "azurerm" {
+    resource_group_name  = "carson-terraform-dob"
+    storage_account_name = "carsonterraformstorage"
+    container_name       = "carson-dob"
+    key                  = "prod.terraform.carson-dob"
+    use_oidc             = true
+    subscription_id      = "3e16852e-8399-4c16-b246-16bf46bc3747"
+    tenant_id            = "1b4a4fed-fed8-4823-a8a0-3d5cea83d122"
+    client_id            = "e886df3c-c276-43de-a390-d1cdc6d69e57" 
+  }
 }
+
+variable "client_secret" {}
 
 provider "azurerm" {
   features {}
@@ -27,7 +33,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = var.resource_group_name
+  name     = "carson-terraform-dob"
   location = "westus2"
   tags = {
     Environment = "Terraform Getting Started"
