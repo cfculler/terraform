@@ -12,7 +12,7 @@ terraform {
     resource_group_name  = "carson-terraform-dob"
     storage_account_name = "carsonterraformstorage"
     container_name       = "carson-dob"
-    key                  = "prod.terraform.carson-dob"
+    key                  = "prod.terraform.carson-dob2"
     use_oidc             = true
     subscription_id      = "3e16852e-8399-4c16-b246-16bf46bc3747"
     tenant_id            = "1b4a4fed-fed8-4823-a8a0-3d5cea83d122"
