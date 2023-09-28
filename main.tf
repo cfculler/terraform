@@ -18,6 +18,7 @@ terraform {
     subscription_id      = "3e16852e-8399-4c16-b246-16bf46bc3747"
     tenant_id            = "1b4a4fed-fed8-4823-a8a0-3d5cea83d122"
     client_id            = "e886df3c-c276-43de-a390-d1cdc6d69e57"
+    client_secret = "5615872f-b58b-48f3-9bf1-593c861e8f27" #this is the secret ID, not the actual secret, so it should be fine in plain text
   }
 }
 
