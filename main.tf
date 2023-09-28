@@ -9,12 +9,12 @@ terraform {
 
   required_version = ">= 1.1.0"
 
-  # backend "azurerm" {
-  #   resource_group_name  = "carson-terraform-dob"
-  #   storage_account_name = "carsonterraformstorage"
-  #   container_name       = "carson-dob"
-  #   key                  = "prod.terraform.carson-dob"
-  # }
+  backend "azurerm" {
+    resource_group_name  = "carson-terraform-dob"
+    storage_account_name = "carsonterraformstorage"
+    container_name       = "carson-dob"
+    key                  = "prod.terraform.carson-dob"
+  }
 }
 
 variable "client_secret" {}
