@@ -1,0 +1,39 @@
+name: Prep Terraform
+
+on: 
+    pull_request:
+        branches:
+            - main
+    workflow_dispatch:
+
+permissions:
+    id-token: write
+    contents: read
+
+jobs:
+    prep:
+        runs-on: ubuntu-latest
+        env:
+            TF_VAR_client_secret: ${{ secrets.CLIENT_SECRET }}
+        steps:
+            - name: Checkout Repo
+              uses: actions/checkout@v2
+
+            - name: Setup Terraform
+              uses: hashicorp/setup-terraform@v1
+              with:
+                terraform_version: 1.5.7
+            
+            - name: Login to Azure Cloud
+              uses: azure/login@v1
+              with:
+                client-id: ${{ secrets.CLIENT_ID }}
+                tenant-id: ${{ secrets.TENANT_ID }}
+                subscription-id: ${{ secrets.SUBSCRIPTION_ID }}
+
+            - name: Initialize and Apply
+              run: |
+                terraform init
+                terraform apply
+
+    
