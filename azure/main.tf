@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "rg" {
   location = "westus2"
   tags = {
     Environment = "Liatrio"
-    Team = "Hedgehogs"
+    Team = "Hedgehog"
   }
 }
 
