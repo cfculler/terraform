@@ -2,7 +2,7 @@ resource "azurerm_resource_group" "rg" {
   name     = "carson-terraform-dob"
   location = "westus2"
   tags = {
-    Environment = "Liatrio"
+    Environment = "Friday"
     Team = "Hedgehogs"
   }
 }
