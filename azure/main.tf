@@ -2,8 +2,8 @@ resource "azurerm_resource_group" "rg" {
   name     = "carson-terraform-dob"
   location = "westus2"
   tags = {
-    Environment = "Terraform Getting Started"
-    Team = "DevOps"
+    Environment = "Liatrio"
+    Team = "Hedgehogs"
   }
 }
 
